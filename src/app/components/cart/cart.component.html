@@ -1,0 +1,44 @@
+<div class="vh-100 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="mt-5 text-end"> <button (click)="backToCourse()" class="btn btn-success btn-sm ">Back to
+                        courses</button>
+                </div>
+                <div class="row">
+                    <div class="col-10 mx-auto mt-5 p-4 bg-white shadow">
+                        <h3>Added Courses:</h3><br>
+
+                        <div class="row" *ngFor="let course of selectedCourses">
+                            <div class="col-2 text-center">
+                                <img src="{{course.image}}" class="card-img-top margin-auto mb-2"
+                                    alt="{{course.courseName}} image"
+                                    style="width: 10vh; height: 10vh; margin: auto; margin-top: 2vh;">
+                                    <br><button class="minus">-</button>
+                                    <div class="numberInput"><input class="inputNumberIn" type="text"></div>
+    
+                                    <button class="minus">+</button>
+                                    <br>
+                            </div>
+                            <div class="col-8" style="font-size: 125%; color: red;">{{course.courseName}}</div>
+                            <div class="col-2"><b>{{course.price}}</b></div><br>   
+                        </div>
+                        
+                        <hr>
+                        <div class="row ">
+                            <div class="col-2"></div>
+                            <div class="col-8"></div>
+                            <div class="col-2">Total Amount: <b>{{totalAmount}}</b></div>
+                          
+                        </div>
+                    </div>
+                    <br>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

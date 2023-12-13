@@ -8,6 +8,12 @@ import { HeaderComponent } from './layout/header/header.component';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { DashboardSidemenuComponent } from './layout/dashboard-sidemenu/dashboard-sidemenu.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { FormsModule } from '@angular/forms';
+import { CartComponent } from './components/cart/cart.component';
+import { CommonService } from './core/services/common.service';
+import { DataService } from './core/services/data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,14 +21,23 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     HeaderComponent,
     DashboardComponent,
     DashboardSidemenuComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CommonService,DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+
+
+}
